@@ -1,0 +1,14 @@
+{
+  "name": "training-journal",
+  "author": "Cetadoido Labs",
+  "private": true,
+  "scripts": {
+    "start": "lerna run --parallel start"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
