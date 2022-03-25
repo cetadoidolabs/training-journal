@@ -3,12 +3,15 @@
   "author": "Cetadoido Labs",
   "private": true,
   "scripts": {
-    "start": "lerna run --parallel start"
+    "start": "yarn workspaces foreach -vp run start",
+    "start-client": "cd packages/client-web && yarn start",
+    "start-server": "cd packages/server && yarn start"
   },
   "workspaces": [
     "packages/*"
   ],
+  "packageManager": "yarn@3.2.0",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "eslint": "^8.11.0"
   }
 }
