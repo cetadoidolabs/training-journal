@@ -1,31 +1,31 @@
 {
-  "compilerOptions": {    
-    "target": "es2016",
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "baseUrl": "./packages",                             /* Specify the base directory to resolve non-relative module names. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
-    "strict": true,                                      /* Enable all strict type-checking options. */
-    "skipLibCheck": true,                                /* Skip type checking all .d.ts files. */
-    "composite": true,
-    "paths": {
-      "client-web/*": [
-        "./packages/client-web/*"
-      ],
-      "server/*": [
-        "./packages/server/*"
-      ],
-    }
-  },
   "include": [
-    "./packages"
+    "remix.env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
-  "exclude": [
-    "./packages/**/tests/**",
-    "./packages/**/dist/**"
-  ],
-  "references": [
-    { "path": "./packages/server" },
-    { "path": "./packages/client-web" },
-  ]
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2019"
+    ],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "target": "ES2019",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./app/*"
+      ]
+    },
+    "skipLibCheck": true,
+    // Remix takes care of building everything in `remix build`.
+    "noEmit": true
+  }
 }

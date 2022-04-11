@@ -1,29 +1,32 @@
 {
   "name": "training-journal",
-  "author": "Cetadoido Labs",
   "private": true,
+  "description": "",
+  "license": "",
+  "author": "Cetadoido Labs",
+  "sideEffects": false,
   "scripts": {
-    "start": "yarn workspaces foreach -vp run start",
-    "start-client": "cd packages/client-web && yarn start",
-    "start-server": "cd packages/server && yarn start"
+    "build": "remix build",
+    "deploy": "fly deploy --remote-only",
+    "dev": "remix dev",
+    "start": "remix-serve build"
   },
-  "workspaces": [
-    "packages/*"
-  ],
-  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "@remix-run/node": "^1.3.5",
+    "@remix-run/react": "^1.3.5",
+    "@remix-run/serve": "^1.3.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.13",
-    "@types/react": "^17.0.20",
+    "@remix-run/dev": "^1.3.5",
+    "@remix-run/eslint-config": "^1.3.5",
+    "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "eslint": "^8.11.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.6.3",
-    "web-vitals": "^2.1.0"
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
