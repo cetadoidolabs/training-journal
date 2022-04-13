@@ -18,7 +18,7 @@ export default function Index() {
           >
             Logout
           </button>
-        </Form>) :
+         </Form>) :
         (<Link to="/login">Login</Link>)}
 
       <br />

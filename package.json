@@ -10,7 +10,8 @@
     "deploy": "fly deploy --remote-only",
     "dev": "remix dev",
     "start": "remix-serve build",
-    "db:seed": "prisma db seed"
+    "db:seed": "prisma db seed",
+    "lint:fix": "eslint \"app/**/*.{js,ts,jsx,tsx}\" --fix"
   },
   "dependencies": {
     "@prisma/client": "^3.12.0",
