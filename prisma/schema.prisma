@@ -11,25 +11,26 @@ datasource db {
 }
 
 model User {
-  id        String     @id @default(cuid())
-  username  String     @unique
-  name      String?
-  password  String
-  exercises Exercise[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id         String     @id @default(cuid())
+  username   String     @unique
+  name       String?
+  password   String
+  exercises  Exercise[]
+  categories Category[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
 }
 
 model Exercise {
-  id         Int        @id @default(autoincrement())
+  id         Int                     @id @default(autoincrement())
   date       DateTime
   title      String?
-  categories Category[]
   entries    Entry[]
-  User       User?      @relation(fields: [userId], references: [id])
+  categories ExercisesOnCategories[]
+  User       User?                   @relation(fields: [userId], references: [id])
   userId     String?
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
+  createdAt  DateTime                @default(now())
+  updatedAt  DateTime                @updatedAt
 }
 
 model Entry {
@@ -45,10 +46,22 @@ model Entry {
 }
 
 model Category {
-  id         Int       @id @default(autoincrement())
-  name       String
-  Exercise   Exercise? @relation(fields: [exerciseId], references: [id])
-  exerciseId Int?
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id        Int                     @id @default(autoincrement())
+  name      String
+  User      User?                   @relation(fields: [userId], references: [id])
+  userId    String?
+  exercises ExercisesOnCategories[]
+  createdAt DateTime                @default(now())
+  updatedAt DateTime                @updatedAt
+}
+
+model ExercisesOnCategories {
+  exercise   Exercise @relation(fields: [exerciseId], references: [id])
+  exerciseId Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@id([exerciseId, categoryId])
 }
