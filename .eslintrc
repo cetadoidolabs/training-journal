@@ -6,6 +6,7 @@
   "rules": {
     "no-console": "off",
     "no-multi-spaces": "error",
+    "no-trailing-spaces": "error",
     "no-multiple-empty-lines": [
       1,
       {
@@ -25,11 +26,13 @@
       "error",
       "prefer-double"
     ],
+    "eol-last": ["error", "always"],
+    "object-curly-spacing": ["error", "always"],
     "react/jsx-wrap-multilines": "error",
     "react/self-closing-comp": "error",
     "react/jsx-closing-bracket-location": "error",
     "react/jsx-closing-tag-location": "error",
     "react/jsx-curly-spacing": "error",
-    "react/jsx-boolean-value": "error"
+    "react/jsx-boolean-value": "error"    
   }
 }
