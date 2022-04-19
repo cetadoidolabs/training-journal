@@ -1,7 +1,7 @@
 import type { ActionFunction } from '@remix-run/node';
 import { redirect } from '@remix-run/node';
 
-import { create } from '~/models/category.server';
+import { createCategory } from '~/models/category.server';
 import CategoryForm from '~/components/CategoryForm';
 import { requireUserId } from '~/session.server';
 
@@ -11,7 +11,7 @@ export const action: ActionFunction = async ({ request }) => {
 
   const name = formData.get('name');
 
-  await create({ name, userId });
+  await createCategory({ name, userId });
 
   return redirect('/category');
 };
