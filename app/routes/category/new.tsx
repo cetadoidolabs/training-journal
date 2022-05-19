@@ -16,7 +16,7 @@ export const action: ActionFunction = async ({ request }) => {
   return redirect('/category');
 };
 
-const CategoryList = () => {
+const NewCategory = () => {
   return (
     <div>
       <h1>Nova categoria</h1>
@@ -25,4 +25,4 @@ const CategoryList = () => {
   );
 };
 
-export default CategoryList;
+export default NewCategory;

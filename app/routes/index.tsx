@@ -26,6 +26,9 @@ export default function Index() {
       <br />
       <br />
       <Link to="/category">Category</Link>
+      <br />
+      <br />
+      <Link to="/exercise">Exercise</Link>
     </div>
   );
 }
