@@ -47,6 +47,16 @@ export async function getUser(request: Request): Promise<null | string> {
   throw await logout(request);
 }
 
+export async function requireUserId(request: Request): Promise<string> {
+  const userId = await getUser(request);
+
+  if (userId) {
+    return userId;
+  }
+
+  throw redirect('/login');
+}
+
 export async function createUserSession({
   request,
   userId,

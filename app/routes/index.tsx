@@ -20,11 +20,15 @@ export default function Index() {
           </button>
          </Form>) :
         (<Link to="/login">Login</Link>)}
-
       <br />
-      or
       <br />
       <Link to="/register">Register</Link>
+      <br />
+      <br />
+      <Link to="/category">Category</Link>
+      <br />
+      <br />
+      <Link to="/exercise">Exercise</Link>
     </div>
   );
 }
